@@ -1,0 +1,7 @@
+{
+  "name": "sig-image-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
