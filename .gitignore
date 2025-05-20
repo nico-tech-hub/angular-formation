@@ -2,7 +2,6 @@
 # http://git-scm.com/docs/gitignore
 
 # PROJET
-/src/app/features/components/chantier-detail
 /src/app/features/components/chantier-filters
 
 *~
