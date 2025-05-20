@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { IonicModule, NavController } from '@ionic/angular';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,8 @@ export class LoginPage {
   constructor(
     private fb: FormBuilder,
     private auth: AuthService,
-    private navCtrl: NavController
+    private router: Router,
+    private navCtrl : NavController
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -37,6 +39,7 @@ export class LoginPage {
     this.auth.login(email, password).subscribe({
       next: (res) => {
         this.navCtrl.navigateRoot('/dashboard');
+        this.router.navigate(['/dashboard']);
       },
       error: (err) => {
         this.error = err?.error?.message || 'Échec de connexion';
