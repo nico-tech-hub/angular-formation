@@ -1,0 +1,22 @@
+ion-card {
+  margin: 8px 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+ion-card:hover {
+  transform: scale(1.01);
+}
+
+ion-chip {
+  font-size: 0.75rem;
+  height: 24px;
+  padding: 0 8px;
+  border-radius: 8px;
+}
+
+ion-icon[name="chevron-forward-outline"] {
+  font-size: 1.4rem;
+  color: var(--ion-color-medium);
+}

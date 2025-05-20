@@ -1,0 +1,26 @@
+ion-toolbar {
+  --background: var(--ion-color-light);
+  --color: var(--ion-color-dark);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+ion-searchbar {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+ion-card {
+  margin: 12px 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+ion-icon[name="filter-outline"],
+ion-icon[name="map-outline"] {
+  font-size: 1.4rem;
+  color: var(--ion-color-medium);
+}
+
+ion-list {
+  padding-bottom: 80px; /* Pour laisser la place au scroll infini */
+}

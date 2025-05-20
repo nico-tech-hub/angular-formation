@@ -38,7 +38,7 @@ export class LoginPage {
 
     this.auth.login(email, password).subscribe({
       next: (res) => {
-        this.navCtrl.navigateRoot('/dashboard');
+        //this.navCtrl.navigateRoot('/dashboard');
         this.router.navigate(['/dashboard']);
       },
       error: (err) => {

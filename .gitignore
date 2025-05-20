@@ -2,7 +2,8 @@
 # http://git-scm.com/docs/gitignore
 
 # PROJET
-/src/app/features/chantiers
+/src/app/features/components/chantier-detail
+/src/app/features/components/chantier-filters
 
 *~
 *.sw[mnpcod]

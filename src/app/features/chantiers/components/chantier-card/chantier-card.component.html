@@ -1,0 +1,21 @@
+<ion-card button>
+  <ion-card-content class="ion-padding-horizontal ion-padding-vertical">
+    <ion-grid>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="9">
+          <div>
+            <strong>{{ chantier.reference }}</strong>
+          </div>
+          <div>{{ chantier.address.city }} {{ chantier.address.postalCode }}</div>
+          <div>{{ chantier.createDate | date: 'dd/MM/yyyy' }}</div>
+        </ion-col>
+        <ion-col size="2" class="ion-text-end">
+          <ion-chip color="warning">{{ chantier.module }}</ion-chip>
+        </ion-col>
+        <ion-col size="1" class="ion-text-end">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>

@@ -1,0 +1,63 @@
+<ion-menu contentId="main-content" type="overlay">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>
+        <img src="assets/logo.png" alt="logo" style="height: 32px" />
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item button>
+        <ion-icon slot="start" name="list-outline"></ion-icon>
+        Liste des chantiers
+      </ion-item>
+      <ion-item button>
+        <ion-icon slot="start" name="add-outline"></ion-icon>
+        Ajouter un chantier
+      </ion-item>
+    </ion-list>
+    <ion-footer>
+      <ion-item lines="none" button>
+        <ion-icon slot="start" name="settings-outline"></ion-icon>
+        Paramètres
+      </ion-item>
+    </ion-footer>
+  </ion-content>
+</ion-menu>
+
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Chantiers</ion-title>
+    <ion-searchbar 
+      slot="primary" 
+      placeholder="Rechercher..."
+      [(ngModel)]="searchTerm"
+      (ionInput)="onSearchChange()">
+    </ion-searchbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="openFilters()">
+        <ion-icon name="filter-outline"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="map-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="main-content">
+  <ion-list>
+    <ng-container *ngFor="let chantier of chantiers()">
+      <app-chantier-card [chantier]="chantier" (click)="openDetail(chantier)"></app-chantier-card>
+    </ng-container>
+
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMore($event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Chargement...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ion-list>
+</ion-content>

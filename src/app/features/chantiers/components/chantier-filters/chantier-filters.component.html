@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Filtres</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()">
+        <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form (ngSubmit)="applyFilters()">
+    <ion-item>
+      <ion-label position="stacked">Ville</ion-label>
+      <ion-input [(ngModel)]="filters.city" name="city"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Module</ion-label>
+      <ion-select [(ngModel)]="filters.module" name="module">
+        <ion-select-option value="DT">DT</ion-select-option>
+        <ion-select-option value="DICT">DICT</ion-select-option>
+        <ion-select-option value="DT-DICT">DT-DICT</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Statut</ion-label>
+      <ion-select [(ngModel)]="filters.status" name="status">
+        <ion-select-option value="nouveau">Nouveau</ion-select-option>
+        <ion-select-option value="en traitement">En traitement</ion-select-option>
+        <ion-select-option value="prêt">Prêt</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" class="ion-margin-top">Appliquer</ion-button>
+  </form>
+</ion-content>
